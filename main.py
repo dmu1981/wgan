@@ -12,7 +12,7 @@ IMAGE_SIZE = 64
 BATCH_SIZE = 256
 
 def weights_init(m):
-    """Helper for weight initialization. 
+    """Helper for weight initialization.
      Weights are initialized very close to zero to avoid being clipped right away"""
     classname = m.__class__.__name__
     if classname.find('Conv') != -1:
@@ -118,7 +118,6 @@ def get_data(dataset_path, batch_size):
     return DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
 dataloader = get_data("./train", BATCH_SIZE)
-GAN_PATH = "gan.pt"
 
 class GANTrainer:
     """ The training class for the Wasserstein GAN"""
@@ -258,13 +257,13 @@ class GANTrainer:
 
             torch.save({
                       'epoch': epoch,
-                      'generator_model_state_dict': 
+                      'generator_model_state_dict':
                         self.generator.state_dict(),
-                      'generator_optimizer_state_dict': 
+                      'generator_optimizer_state_dict':
                         self.generator_optimizer.state_dict(),
-                      'discriminator_model_state_dict': 
+                      'discriminator_model_state_dict':
                         self.discriminator.state_dict(),
-                      'discriminator_optimizer_state_dict': 
+                      'discriminator_optimizer_state_dict':
                         self.discriminator_optimizer.state_dict(),
                       }, "gan.pt")
 
