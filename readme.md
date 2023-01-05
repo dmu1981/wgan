@@ -3,6 +3,7 @@
 GANs provide a zero-sum game between a generator network and a discriminator network which compete against each other in generating and identifiying artificial samples. Given Gaussian random noise, the generator learns to resemble the distribution of training set and draw random samples from it. A discriminator network is trying to tell artificial samples apart from real samples. Both networks compete during the training cycle and learn from each other. 
 
 ![GANcats](good.png)
+
 The above image shows artificial images of cats trained on the [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats) dataset on Kaggle. Results are low-resolution (64x64) and low quality as i did not yet had enough training time on my GPU to achieve good results. A hgher resolution, a better network architecture and a systematic hyperparameter optimization would surely yield more satisfying and visually more pleasing results. 
 
 ## The training cycle
